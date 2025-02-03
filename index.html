@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Local Business Platform - Enhanced Gallery</title>
+  <title>Local Business Platform - Enhanced Gallery & Contact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     /* Global Styles */
@@ -162,6 +162,30 @@
       transition: transform 0.3s ease;
     }
     
+    /* Contact Section */
+    .contact-info {
+      margin-top: 20px;
+      padding: 15px;
+      background: #e9ecef;
+      border-radius: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-around;
+      font-size: 0.9em;
+    }
+    .contact-info a {
+      display: inline-block;
+      padding: 5px 10px;
+      background: #007BFF;
+      color: #fff;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .contact-info a:hover {
+      background: #0056b3;
+    }
+    
     /* Responsive Adjustments */
     @media (max-width: 768px) {
       header {
@@ -183,6 +207,10 @@
       }
       main {
         width: 95%;
+      }
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
       }
     }
     
@@ -221,7 +249,7 @@
   <!-- Main Homepage Content -->
   <main>
     <h2 class="section-header">Our Businesses</h2>
-    <p>Explore the unique services each member of our community offers. Click on a business below to learn more:</p>
+    <p>Explore the unique services each member of our community offers. Click on a business below to learn more and get in touch:</p>
     <ul>
       <li><strong><a href="#designer">Designer</a></strong> - Creative solutions and branding.</li>
       <li><strong><a href="#schools">School</a></strong> - Educational excellence and community programs.</li>
@@ -230,17 +258,16 @@
     </ul>
   </main>
   
-  <!-- Designer Section with Gallery -->
+  <!-- Designer Section with Gallery and Contact Info -->
   <section id="designer">
     <div class="business-container">
       <img src="https://via.placeholder.com/800x400?text=Designer+Banner" alt="Designer Banner">
       <div class="business-content">
         <h2 class="section-header">Designer Business</h2>
-        <p>We offer creative solutions that include branding, logo design, and graphic design services tailored to your business needs. Our mission is to make your brand stand out!</p>
+        <p>We offer creative solutions including branding, logo design, and graphic design services tailored to your business needs. Our mission is to make your brand stand out!</p>
         
         <!-- Image Gallery -->
         <div class="gallery">
-          <!-- Ten sample images -->
           <img src="image/download.jpg" alt="Image 1">
           <img src="image/download.jpg" alt="Image 2">
           <img src="image/download.jpg" alt="Image 3">
@@ -252,14 +279,19 @@
           <img src="https://via.placeholder.com/300x200?text=Image+9" alt="Image 9">
           <img src="https://via.placeholder.com/300x200?text=Image+10" alt="Image 10">
         </div>
-        <!-- End Gallery -->
-        
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <a href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
+          <a href="https://facebook.com/YourDesignerPage" target="_blank">Facebook</a>
+          <a href="mailto:designer@example.com">Email</a>
+          <a href="tel:+1234567890">Call: +1234567890</a>
+        </div>
         <div class="back-to-top"><a href="#top">Back to Top</a></div>
       </div>
     </div>
   </section>
   
-  <!-- Programmer Section with Gallery -->
+  <!-- Programmer Section with Gallery and Contact Info -->
   <section id="programmer">
     <div class="business-container">
       <img src="https://via.placeholder.com/800x400?text=Programmer+Banner" alt="Programmer Banner">
@@ -269,7 +301,6 @@
         
         <!-- Image Gallery -->
         <div class="gallery">
-          <!-- Ten sample images -->
           <img src="image/programmers.jpg" alt="Image 1">
           <img src="image/programmers.jpg" alt="Image 2">
           <img src="image/programmers.jpg" alt="Image 3">
@@ -281,14 +312,19 @@
           <img src="https://via.placeholder.com/300x200?text=Image+9" alt="Image 9">
           <img src="https://via.placeholder.com/300x200?text=Image+10" alt="Image 10">
         </div>
-        <!-- End Gallery -->
-        
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <a href="https://wa.me/0987654321" target="_blank">WhatsApp</a>
+          <a href="https://facebook.com/YourProgrammerPage" target="_blank">Facebook</a>
+          <a href="mailto:programmer@example.com">Email</a>
+          <a href="tel:+0987654321">Call: +0987654321</a>
+        </div>
         <div class="back-to-top"><a href="#top">Back to Top</a></div>
       </div>
     </div>
   </section>
   
-  <!-- School Section with Gallery -->
+  <!-- School Section with Gallery and Contact Info -->
   <section id="schools">
     <div class="business-container">
       <img src="https://via.placeholder.com/800x400?text=School+Banner" alt="School Banner">
@@ -298,7 +334,6 @@
         
         <!-- Image Gallery -->
         <div class="gallery">
-          <!-- Ten sample images -->
           <img src="image/school.jpg" alt="Image 1">
           <img src="image/school.jpg" alt="Image 2">
           <img src="image/school.jpg" alt="Image 3">
@@ -310,14 +345,19 @@
           <img src="https://via.placeholder.com/300x200?text=Image+9" alt="Image 9">
           <img src="https://via.placeholder.com/300x200?text=Image+10" alt="Image 10">
         </div>
-        <!-- End Gallery -->
-        
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <a href="https://wa.me/1122334455" target="_blank">WhatsApp</a>
+          <a href="https://facebook.com/YourSchoolPage" target="_blank">Facebook</a>
+          <a href="mailto:school@example.com">Email</a>
+          <a href="tel:+1122334455">Call: +1122334455</a>
+        </div>
         <div class="back-to-top"><a href="#top">Back to Top</a></div>
       </div>
     </div>
   </section>
   
-  <!-- Butcher Section with Gallery -->
+  <!-- Butcher Section with Gallery and Contact Info -->
   <section id="butcher">
     <div class="business-container">
       <img src="https://via.placeholder.com/800x400?text=Butcher+Banner" alt="Butcher Banner">
@@ -327,7 +367,6 @@
         
         <!-- Image Gallery -->
         <div class="gallery">
-          <!-- Ten sample images -->
           <img src="image/butcher.jpg" alt="Image 1">
           <img src="image/butcher.jpg" alt="Image 2">
           <img src="image/butcher.jpg" alt="Image 3">
@@ -339,8 +378,13 @@
           <img src="https://via.placeholder.com/300x200?text=Image+9" alt="Image 9">
           <img src="https://via.placeholder.com/300x200?text=Image+10" alt="Image 10">
         </div>
-        <!-- End Gallery -->
-        
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <a href="https://wa.me/6677889900" target="_blank">WhatsApp</a>
+          <a href="https://facebook.com/YourButcherPage" target="_blank">Facebook</a>
+          <a href="mailto:butcher@example.com">Email</a>
+          <a href="tel:+6677889900">Call: +6677889900</a>
+        </div>
         <div class="back-to-top"><a href="#top">Back to Top</a></div>
       </div>
     </div>
