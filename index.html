@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     /* Global Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body, html {
       margin: 0;
       padding: 0;
@@ -21,7 +24,7 @@
       text-decoration: underline;
     }
     
-    /* Sticky Navigation Bar */
+    /* Navigation Bar */
     nav {
       background: #333;
       color: #fff;
@@ -35,6 +38,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
+      flex-wrap: wrap;
     }
     nav .logo {
       font-size: 1.5em;
@@ -45,9 +49,10 @@
       display: flex;
       margin: 0;
       padding: 0;
+      flex-wrap: wrap;
     }
     nav li {
-      margin-left: 20px;
+      margin: 0 10px;
     }
     
     /* Header Section */
@@ -59,6 +64,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 0 20px;
     }
     header h1 {
       font-size: 3em;
@@ -72,6 +78,7 @@
     
     /* Main Content */
     main {
+      width: 90%;
       max-width: 1200px;
       margin: 20px auto;
       background: #fff;
@@ -134,7 +141,7 @@
     /* Gallery Styles */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       grid-gap: 15px;
       margin-top: 20px;
     }
@@ -155,8 +162,15 @@
       transition: transform 0.3s ease;
     }
     
-    /* Responsive Layout */
+    /* Responsive Adjustments */
     @media (max-width: 768px) {
+      header {
+        height: 300px;
+        padding: 0 10px;
+      }
+      header h1 {
+        font-size: 2em;
+      }
       nav .container {
         flex-direction: column;
       }
@@ -165,10 +179,19 @@
         align-items: center;
       }
       nav li {
-        margin: 10px 0;
+        margin: 5px 0;
       }
+      main {
+        width: 95%;
+      }
+    }
+    
+    @media (max-width: 480px) {
       header h1 {
-        font-size: 2em;
+        font-size: 1.5em;
+      }
+      header p {
+        font-size: 1em;
       }
     }
   </style>
@@ -180,7 +203,7 @@
       <div class="logo">LocalBiz</div>
       <ul>
         <li><a href="#designer">Designer</a></li>
-        <li><a href="#school">School</a></li>
+        <li><a href="#schools">School</a></li>
         <li><a href="#butcher">Butcher</a></li>
         <li><a href="#programmer">Programmer</a></li>
       </ul>
@@ -201,7 +224,7 @@
     <p>Explore the unique services each member of our community offers. Click on a business below to learn more:</p>
     <ul>
       <li><strong><a href="#designer">Designer</a></strong> - Creative solutions and branding.</li>
-      <li><strong><a href="#school">School</a></strong> - Educational excellence and community programs.</li>
+      <li><strong><a href="#schools">School</a></strong> - Educational excellence and community programs.</li>
       <li><strong><a href="#butcher">Butcher</a></strong> - Quality meat products and fresh cuts.</li>
       <li><strong><a href="#programmer">Programmer</a></strong> - Digital innovation and tech solutions.</li>
     </ul>
@@ -235,12 +258,14 @@
       </div>
     </div>
   </section>
+  
+  <!-- Programmer Section with Gallery -->
   <section id="programmer">
     <div class="business-container">
-      <img src="https://via.placeholder.com/800x400?text=Designer+Banner" alt="Designer Banner">
+      <img src="https://via.placeholder.com/800x400?text=Programmer+Banner" alt="Programmer Banner">
       <div class="business-content">
-        <h2 class="section-header">programmers BUSINESS</h2>
-        <p>We offer creative solutions that include branding, logo design, and graphic design services tailored to your business needs. Our mission is to make your brand stand out!</p>
+        <h2 class="section-header">Programmer Business</h2>
+        <p>We offer digital solutions ranging from website design to app development. Our mission is to help you innovate and transform your business with cutting-edge technology.</p>
         
         <!-- Image Gallery -->
         <div class="gallery">
@@ -262,12 +287,14 @@
       </div>
     </div>
   </section>
+  
+  <!-- School Section with Gallery -->
   <section id="schools">
     <div class="business-container">
-      <img src="https://via.placeholder.com/800x400?text=Designer+Banner" alt="Designer Banner">
+      <img src="https://via.placeholder.com/800x400?text=School+Banner" alt="School Banner">
       <div class="business-content">
-        <h2 class="section-header">SCHOOLS BUSINESS</h2>
-        <p>We offer creative solutions that include branding, logo design, and graphic design services tailored to your business needs. Our mission is to make your brand stand out!</p>
+        <h2 class="section-header">School Business</h2>
+        <p>We focus on educational excellence and innovative learning solutions to nurture the leaders of tomorrow.</p>
         
         <!-- Image Gallery -->
         <div class="gallery">
@@ -289,12 +316,14 @@
       </div>
     </div>
   </section>
+  
+  <!-- Butcher Section with Gallery -->
   <section id="butcher">
     <div class="business-container">
-      <img src="https://via.placeholder.com/800x400?text=Designer+Banner" alt="Designer Banner">
+      <img src="https://via.placeholder.com/800x400?text=Butcher+Banner" alt="Butcher Banner">
       <div class="business-content">
-        <h2 class="section-header">BUTCHER BUSINESS</h2>
-        <p>We offer creative solutions that include branding, logo design, and graphic design services tailored to your business needs. Our mission is to make your brand stand out!</p>
+        <h2 class="section-header">Butcher Business</h2>
+        <p>We provide quality meat products with a focus on freshness and local sourcing. Our expert butchers prepare the best cuts for your table.</p>
         
         <!-- Image Gallery -->
         <div class="gallery">
@@ -316,10 +345,6 @@
       </div>
     </div>
   </section>
-
-  
-  
-  <!-- Other Business Sections (School, Butcher, Programmer) would follow a similar structure -->
   
   <!-- Footer -->
   <footer style="background:#333; color:#fff; text-align:center; padding:20px 0;">
@@ -327,7 +352,7 @@
     <p>Connecting communities in Malawi through innovation and collaboration.</p>
   </footer>
   
-  <!-- JavaScript for Image and Container Animations -->
+  <!-- JavaScript for Animations -->
   <script>
     // Animate business containers (slide & fade-in)
     const containers = document.querySelectorAll('.business-container');
