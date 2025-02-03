@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Business Platform - Enhanced Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Global Styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+      background: #f4f4f4;
+    }
+    a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Sticky Navigation Bar */
+    nav {
+      background: #333;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    nav .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    nav li {
+      margin-left: 20px;
+    }
+    
+    /* Header Section */
+    header {
+      background: url('https://via.placeholder.com/1600x500?text=Local+Business+Platform') no-repeat center center/cover;
+      color: #080808;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .section-header {
+      border-bottom: 2px solid #007BFF;
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+    }
+    section {
+      margin: 40px 0;
+    }
+    
+    /* Business Container with Animation & Hover Effects */
+    .business-container {
+      background: #fafafa;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .business-container.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .business-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .business-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .business-content {
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .back-to-top {
+      margin-top: 20px;
+      text-align: right;
+    }
+    .back-to-top a {
+      background: #007BFF;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .back-to-top a:hover {
+      background: #0056b3;
+    }
+    
+    /* Gallery Styles */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .gallery img.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+    
+    /* Responsive Layout */
+    @media (max-width: 768px) {
+      nav .container {
+        flex-direction: column;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav li {
+        margin: 10px 0;
+      }
+      header h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="container">
+      <div class="logo">LocalBiz</div>
+      <ul>
+        <li><a href="#designer">Designer</a></li>
+        <li><a href="#school">School</a></li>
+        <li><a href="#butcher">Butcher</a></li>
+        <li><a href="#programmer">Programmer</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Header Section -->
+  <header>
+    <div>
+      <h1>Welcome to Our Local Business Platform</h1>
+      <p>Connecting skills, services, and communities in Malawi</p>
+    </div>
+  </header>
+  
+  <!-- Main Homepage Content -->
+  <main>
+    <h2 class="section-header">Our Businesses</h2>
+    <p>Explore the unique services each member of our community offers. Click on a business below to learn more:</p>
+    <ul>
+      <li><strong><a href="#designer">Designer</a></strong> - Creative solutions and branding.</li>
+      <li><strong><a href="#school">School</a></strong> - Educational excellence and community programs.</li>
+      <li><strong><a href="#butcher">Butcher</a></strong> - Quality meat products and fresh cuts.</li>
+      <li><strong><a href="#programmer">Programmer</a></strong> - Digital innovation and tech solutions.</li>
+    </ul>
+  </main>
+  
+  <!-- Designer Section with Gallery -->
+  <section id="designer">
+    <div class="business-container">
+      <img src="https://via.placeholder.com/800x400?text=Designer+Banner" alt="Designer Banner">
+      <div class="business-content">
+        <h2 class="section-header">Designer Business</h2>
+        <p>We offer creative solutions that include branding, logo design, and graphic design services tailored to your business needs. Our mission is to make your brand stand out!</p>
+        
+        <!-- Image Gallery -->
+        <div class="gallery">
+          <!-- Ten sample images -->
+          <img src="image/download.jpg" alt="Image 1">
+          <img src="image/download.jpg" alt="Image 2">
+          <img src="image/download.jpg" alt="Image 3">
+          <img src="https://via.placeholder.com/300x200?text=Image+4" alt="Image 4">
+          <img src="https://via.placeholder.com/300x200?text=Image+5" alt="Image 5">
+          <img src="https://via.placeholder.com/300x200?text=Image+6" alt="Image 6">
+          <img src="https://via.placeholder.com/300x200?text=Image+7" alt="Image 7">
+          <img src="https://via.placeholder.com/300x200?text=Image+8" alt="Image 8">
+          <img src="https://via.placeholder.com/300x200?text=Image+9" alt="Image 9">
+          <img src="https://via.placeholder.com/300x200?text=Image+10" alt="Image 10">
+        </div>
+        <!-- End Gallery -->
+        
+        <div class="back-to-top"><a href="#top">Back to Top</a></div>
+      </div>
+    </div>
+  </section>
+  <section id="programmer">
+    <div class="business-container">
+      <img src="https://via.placeholder.com/800x400?text=Designer+Banner" alt="Designer Banner">
+      <div class="business-content">
+        <h2 class="section-header">programmers BUSINESS</h2>
+        <p>We offer creative solutions that include branding, logo design, and graphic design services tailored to your business needs. Our mission is to make your brand stand out!</p>
+        
+        <!-- Image Gallery -->
+        <div class="gallery">
+          <!-- Ten sample images -->
+          <img src="image/programmers.jpg" alt="Image 1">
+          <img src="image/programmers.jpg" alt="Image 2">
+          <img src="image/programmers.jpg" alt="Image 3">
+          <img src="https://via.placeholder.com/300x200?text=Image+4" alt="Image 4">
+          <img src="https://via.placeholder.com/300x200?text=Image+5" alt="Image 5">
+          <img src="https://via.placeholder.com/300x200?text=Image+6" alt="Image 6">
+          <img src="https://via.placeholder.com/300x200?text=Image+7" alt="Image 7">
+          <img src="https://via.placeholder.com/300x200?text=Image+8" alt="Image 8">
+          <img src="https://via.placeholder.com/300x200?text=Image+9" alt="Image 9">
+          <img src="https://via.placeholder.com/300x200?text=Image+10" alt="Image 10">
+        </div>
+        <!-- End Gallery -->
+        
+        <div class="back-to-top"><a href="#top">Back to Top</a></div>
+      </div>
+    </div>
+  </section>
+  <section id="schools">
+    <div class="business-container">
+      <img src="https://via.placeholder.com/800x400?text=Designer+Banner" alt="Designer Banner">
+      <div class="business-content">
+        <h2 class="section-header">SCHOOLS BUSINESS</h2>
+        <p>We offer creative solutions that include branding, logo design, and graphic design services tailored to your business needs. Our mission is to make your brand stand out!</p>
+        
+        <!-- Image Gallery -->
+        <div class="gallery">
+          <!-- Ten sample images -->
+          <img src="image/school.jpg" alt="Image 1">
+          <img src="image/school.jpg" alt="Image 2">
+          <img src="image/school.jpg" alt="Image 3">
+          <img src="image/school.jpg" alt="Image 4">
+          <img src="https://via.placeholder.com/300x200?text=Image+5" alt="Image 5">
+          <img src="https://via.placeholder.com/300x200?text=Image+6" alt="Image 6">
+          <img src="https://via.placeholder.com/300x200?text=Image+7" alt="Image 7">
+          <img src="https://via.placeholder.com/300x200?text=Image+8" alt="Image 8">
+          <img src="https://via.placeholder.com/300x200?text=Image+9" alt="Image 9">
+          <img src="https://via.placeholder.com/300x200?text=Image+10" alt="Image 10">
+        </div>
+        <!-- End Gallery -->
+        
+        <div class="back-to-top"><a href="#top">Back to Top</a></div>
+      </div>
+    </div>
+  </section>
+  <section id="butcher">
+    <div class="business-container">
+      <img src="https://via.placeholder.com/800x400?text=Designer+Banner" alt="Designer Banner">
+      <div class="business-content">
+        <h2 class="section-header">BUTCHER BUSINESS</h2>
+        <p>We offer creative solutions that include branding, logo design, and graphic design services tailored to your business needs. Our mission is to make your brand stand out!</p>
+        
+        <!-- Image Gallery -->
+        <div class="gallery">
+          <!-- Ten sample images -->
+          <img src="image/butcher.jpg" alt="Image 1">
+          <img src="image/butcher.jpg" alt="Image 2">
+          <img src="image/butcher.jpg" alt="Image 3">
+          <img src="image/butcher.jpg" alt="Image 4">
+          <img src="https://via.placeholder.com/300x200?text=Image+5" alt="Image 5">
+          <img src="https://via.placeholder.com/300x200?text=Image+6" alt="Image 6">
+          <img src="https://via.placeholder.com/300x200?text=Image+7" alt="Image 7">
+          <img src="https://via.placeholder.com/300x200?text=Image+8" alt="Image 8">
+          <img src="https://via.placeholder.com/300x200?text=Image+9" alt="Image 9">
+          <img src="https://via.placeholder.com/300x200?text=Image+10" alt="Image 10">
+        </div>
+        <!-- End Gallery -->
+        
+        <div class="back-to-top"><a href="#top">Back to Top</a></div>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  <!-- Other Business Sections (School, Butcher, Programmer) would follow a similar structure -->
+  
+  <!-- Footer -->
+  <footer style="background:#333; color:#fff; text-align:center; padding:20px 0;">
+    <p>&copy; 2025 Local Business Platform. All rights reserved.</p>
+    <p>Connecting communities in Malawi through innovation and collaboration.</p>
+  </footer>
+  
+  <!-- JavaScript for Image and Container Animations -->
+  <script>
+    // Animate business containers (slide & fade-in)
+    const containers = document.querySelectorAll('.business-container');
+    const containerObserverOptions = { threshold: 0.2 };
+    const containerObserverCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+    const containerObserver = new IntersectionObserver(containerObserverCallback, containerObserverOptions);
+    containers.forEach(container => containerObserver.observe(container));
+    
+    // Animate gallery images (fade & scale-in)
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const imageObserverOptions = { threshold: 0.2 };
+    const imageObserverCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+    const imageObserver = new IntersectionObserver(imageObserverCallback, imageObserverOptions);
+    galleryImages.forEach(img => imageObserver.observe(img));
+  </script>
+</body>
+</html>
